@@ -1,8 +1,8 @@
 resource "google_compute_instance" "terraform" {
-  project      = "${{ secrets.PROJECT_ID }}"
+  project      = var.project_id
   name         = "terraform-git"
   machine_type = "n1-standard-1"
-  zone         = "${{ secrets.GCP_ZONE }}"
+  zone         = var.gcp_zone
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-10"
