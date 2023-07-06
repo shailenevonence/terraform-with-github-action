@@ -1,4 +1,5 @@
 provider "google" {
-  project = '${{ secrets.PROJECT_ID }}'
-  region  = '${{ secrets.GCP_REGION }}'
+  project = var.project_id
+  region  = var.gcp_region
+  zone    = var.gcp_zone
 }
