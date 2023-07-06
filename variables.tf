@@ -10,5 +10,5 @@ variable "gcp_region" {
 
 variable "gcp_zone" {
   type    = string
-  default = ""
+  default = "us-central1-a"
 }
