@@ -44,6 +44,9 @@ jobs:
           echo "gcp_region=${{ secrets.GCP_REGION }}" >> $GITHUB_ENV
           echo "gcp_zone=${{ secrets.GCP_ZONE }}" >> $GITHUB_ENV
 
+      - name: Initialize Terraform
+        run: terraform init
+
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
