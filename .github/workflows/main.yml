@@ -37,6 +37,12 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.2.5
+          
+      - name: Set Terraform Variables
+        run: |
+          echo "project_id=${{ secrets.PROJECT_ID }}" >> $GITHUB_ENV
+          echo "gcp_region=${{ secrets.GCP_REGION }}" >> $GITHUB_ENV
+          echo "gcp_zone=${{ secrets.GCP_ZONE }}" >> $GITHUB_ENV
 
       - name: Terraform fmt
         id: fmt
